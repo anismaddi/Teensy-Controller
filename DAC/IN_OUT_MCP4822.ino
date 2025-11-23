@@ -1,9 +1,32 @@
 #include <SPI.h>
+#include <ADC.h>
+#include <IntervalTimer.h>
 
 const byte CS = 10;
 const byte LDAC = 12;
-const byte analogIn = A5; // Read the analog input A5
-const unsigned int MCP4822_A = 0B0011000000000000;
+const byte analogIn = A5; // Input pin A5
+const unsigned int MCP4822_A = 0B0001000000000000;
+
+ADC *adc = new ADC();        // Teensy ADC object
+IntervalTimer adcTimer;      // hardware timer
+
+volatile uint16_t adcValue = 0;
+volatile bool newSample = false;
+
+void sampleAndSend() {
+  // Read fast from ADC0
+  uint16_t val = adc->adc0->analogRead(analogIn);
+  val &= 0x0FFF;                     // 12-bit mask
+  uint16_t scaledVal = (uint16_t)( ((val-2048) +2048 )*0.8 ) ; // Optional: to provide gain (x 0.8)
+
+  adcValue = scaledVal;
+  newSample = true;
+
+  // Send to DAC (MCP4822)
+  digitalWriteFast(CS, LOW);
+  SPI.transfer16(MCP4822_A | scaledVal);
+  digitalWriteFast(CS, HIGH);
+}
 
 void setup() {
   Serial.begin(115200);
@@ -13,19 +36,19 @@ void setup() {
   pinMode(LDAC, OUTPUT);
   digitalWrite(LDAC, LOW);
 
-  analogReadResolution(10); 
+  // ---- ADC ----
+  adc->adc0->setAveraging(0);
+  adc->adc0->setResolution(12);
+  adc->adc0->setConversionSpeed(ADC_CONVERSION_SPEED::MED_SPEED); // Speed can be increase
+  adc->adc0->setSamplingSpeed(ADC_SAMPLING_SPEED::MED_SPEED);
+
+  // ---- SPI ----
+  SPI.beginTransaction(SPISettings(20000000, MSBFIRST, SPI_MODE0));
+
+  // ---- periodic sampling ----
+  adcTimer.begin(sampleAndSend, 2.0);  // microseconds
 }
 
 void loop() {
-  unsigned int adcValue = analogRead(analogIn);
-  if (adcValue > 4095) adcValue = 4095;  // sécurité
 
-  // SPI
-  SPI.beginTransaction(SPISettings(10000000, MSBFIRST, SPI_MODE0));
-  digitalWrite(CS, LOW);
-  SPI.transfer16(MCP4822_A | adcValue);
-  digitalWrite(CS, HIGH);
-  SPI.endTransaction();
-
-  Serial.println(adcValue);
 }
