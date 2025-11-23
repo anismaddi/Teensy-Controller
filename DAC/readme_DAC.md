@@ -5,3 +5,5 @@ First step, we will couple the Teensy with a MCP4822 (DAC) to convert the digita
 </p>
 
 The MCP4822 is controlled via the SPI interface and allows relatively decent performances, atleast in the audio range. For instance, the total delay measured between the the frequency generator and the output of the MCP is estimated to 2us (See Fig.1 for some measured signals).
+
+Note that the input analog signal is read via the native ADC.
