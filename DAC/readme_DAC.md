@@ -10,5 +10,5 @@ Note that the input analog signal is read via the native ADC.
 
 <p align="center">
   <img src="Teensy_DAC_schematic.png" width="500"><br>
-  <em> Sketch of the circuit using the MCP4822. Each output of the DAC is connected to a female BNC connector. One output corresponds to the raw signal while the second is filtered (Low pass RC filter).  </em>
+  <em> Sketch of the circuit using the MCP4822. Each output of the DAC is connected to a female BNC connector. One output corresponds to the raw signal while the second is filtered (High pass RC filter).  </em>
 </p>
