@@ -17,7 +17,7 @@ void sampleAndSend() {
   // Read fast from ADC0
   uint16_t val = adc->adc0->analogRead(analogIn);
   val &= 0x0FFF;                     
-  uint16_t scaledVal = (uint16_t)( ((val-2048) +2048 )*0.8 ) ; //  gain (x 0.8)
+  uint16_t scaledVal = (uint16_t)( ((val-2048)*0.8 +2048 ) ) ; //  gain (x 0.8)
 
   adcValue = scaledVal;
   newSample = true;
