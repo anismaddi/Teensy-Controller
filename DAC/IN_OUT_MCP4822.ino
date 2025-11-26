@@ -43,7 +43,7 @@ void setup() {
   adc->adc0->setSamplingSpeed(ADC_SAMPLING_SPEED::MED_SPEED);
 
   // ---- SPI ----
-  SPI.beginTransaction(SPISettings(20000000, MSBFIRST, SPI_MODE0));
+  SPI.beginTransaction(SPISettings(20000000, MSBFIRST, SPI_MODE0)); // Can be increased further (up to 110000000 experimentally)
 
   // ---- periodic sampling ----
   adcTimer.begin(sampleAndSend, 2.0);  // optional: for stability
