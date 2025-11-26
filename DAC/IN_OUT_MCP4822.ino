@@ -16,8 +16,8 @@ volatile bool newSample = false;
 void sampleAndSend() {
   // Read fast from ADC0
   uint16_t val = adc->adc0->analogRead(analogIn);
-  val &= 0x0FFF;                     // 12-bit mask
-  uint16_t scaledVal = (uint16_t)( ((val-2048) +2048 )*0.8 ) ; // Optional: to provide gain (x 0.8)
+  val &= 0x0FFF;                     
+  uint16_t scaledVal = (uint16_t)( ((val-2048) +2048 )*0.8 ) ; //  gain (x 0.8)
 
   adcValue = scaledVal;
   newSample = true;
@@ -39,14 +39,14 @@ void setup() {
   // ---- ADC ----
   adc->adc0->setAveraging(0);
   adc->adc0->setResolution(12);
-  adc->adc0->setConversionSpeed(ADC_CONVERSION_SPEED::MED_SPEED); // Speed can be increase
+  adc->adc0->setConversionSpeed(ADC_CONVERSION_SPEED::MED_SPEED); // Speed can be increased
   adc->adc0->setSamplingSpeed(ADC_SAMPLING_SPEED::MED_SPEED);
 
   // ---- SPI ----
   SPI.beginTransaction(SPISettings(20000000, MSBFIRST, SPI_MODE0));
 
   // ---- periodic sampling ----
-  adcTimer.begin(sampleAndSend, 2.0);  // microseconds
+  adcTimer.begin(sampleAndSend, 2.0);  // optional: for stability
 }
 
 void loop() {
