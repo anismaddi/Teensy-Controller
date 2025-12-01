@@ -2,12 +2,11 @@
 This project aims at building a cost effective toolbox for active acoustic control, whether it is to solve physical problems (noise control, active metamaterials..) or for audio applications. 
 
 
-For this, we will use the Teensy 4.1 and build all the necessary circuitery (conditionning, Analog conversion...) and codes.
+To ensure sufficient performances, we will use the Teensy 4.1 microcontroller and build all the necessary circuitery (conditionning, analog conversion...) and codes. This work is split as follow:
 * DAC using the MCP 4822 is done. More details in the corresponding file.
 * External ADC, in progress.
 
-Note: Work in Progress
-
+# Input-Output Response
 
 First step, we will couple the Teensy with a MCP4822 (DAC) to convert the digital output to an analog signal.
 <p align="center">
