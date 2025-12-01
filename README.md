@@ -18,7 +18,7 @@ Using the MCP4822 with a Teensy is relatively easy using the SPI interface. In f
 # Input-Output
 
 <p align="center">
-  <img src="DAC/PCB_V1.MP.jpg" width="500"><br>
+  <img src="DAC/PCB_V1.MP.jpg" width="200"><br>
   <em> Figure 2: Version 1 of the controller (corresponds to the schematic in Figure 1).  </em>
 </p>
 
