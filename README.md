@@ -25,9 +25,6 @@ Using the MCP4822 with a Teensy is relatively easy using the SPI interface. In f
 A first PCB (Figure 2)  was printed following the schematic in Figure 1. While not perfect, it is sufficient to ensure better connection between the components,improve stability, and cleaner look. The design will be improved at a later stage when this work have sufficiently advanced (e.g. better bypass, more pins for the teensy, reduces the traces length, include the offset and clamping circuit for the inputs, BNC terminals...). 
 Additionally, I will use the analog input of the Teensy (pin A5 in most cases) at the begining. While better signal can be acquired using an external ADC, the native one is sufficient for most of my applications. I might do some tests in the future using the  MCP3208.
 
-<table>
-  <tr>
-    <td style="vertical-align: top; width: 60%;">
 
 Since the analog pin can safely accept only voltages between 0 and 3.3 V, a DC offset is introduced using a non-inverting summing buffer (see Fig. 3). To implement this stage, I tested two operational amplifiers that I had on hand: the MCP602 and the TLC272. Both provide acceptable performance, with the TLC272 having the upper hand. However, neither amplifier features a rail-to-rail input stage. For the current tests, I decided to power the TLC272 with 0 to 5V and avoid providing large voltages. Later on, I'll either uses two Schotky diodes to clamp the voltage at 0 and 3.3V or find a better opamp. 
 <p align="center"> <img src="DAC/Sketch_condi.jpg" width="200"><br> <em>Figure 3: </em> </p>
