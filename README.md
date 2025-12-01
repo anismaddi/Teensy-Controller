@@ -22,6 +22,8 @@ Using the MCP4822 with a Teensy is relatively easy using the SPI interface. In f
   <em> Figure 2: Version 1 of the controller (corresponds to the sketch in Figure 1).  </em>
 </p>
 
+A first PCB (Figure 2)  was printed following the schematic in Figure 1. While not perfect, it is sufficient to ensure better connection between the components, reduces the amounts of cables, and improve stability. The design will be improved at a later stage when this work have sufficiently advanced (e.g. better bypass, more pins for the teensy, reduces the traces length, include the offset and clamping circuit for the inputs, BNC terminals...)  
+
 First step, we will couple the Teensy with a MCP4822 (DAC) to convert the digital output to an analog signal.
 <p align="center">
   <img src="DAC/Delay.jpg" width="500"><br>
