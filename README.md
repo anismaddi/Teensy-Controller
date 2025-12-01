@@ -27,7 +27,7 @@ Additionally, I will use the analog input of the Teensy (pin A5 in most cases) a
 
 First step, we will couple the Teensy with a MCP4822 (DAC) to convert the digital output to an analog signal.
 <p align="center">
-  <img src="DAC/Delay.jpg" width="500"><br>
+  <img src="DAC/Res_exp.png" width="500"><br>
   <em>Figure 2: Input (Frequency generator) vs Output (MCP4822 Output) for different frequencies. </em>
 </p>
 
