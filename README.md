@@ -5,6 +5,7 @@ This project aims at building a cost effective toolbox for active acoustic contr
 To ensure sufficient performances and minimal delay, we will use the Teensy 4.1 microcontroller and build all the necessary circuitery (level shift, analog conversion...) and codes. This work is split as follow:
 * Analog output using the MCP4822 via the SPI interface.
 * Simultenous reading (internal ADC) and writing (MCP4822)
+* Conditionning of the analog input (level shift)
 
 # Input-Output Response
 
