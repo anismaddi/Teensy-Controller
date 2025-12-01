@@ -27,9 +27,9 @@ Additionally, I will use the analog input of the Teensy (pin A5 in most cases) a
 
 
 Since the analog pin can safely accept only voltages between 0 and 3.3 V, a DC offset is introduced using a non-inverting summing buffer (see Fig. 3). To implement this stage, I tested two operational amplifiers that I had on hand: the MCP602 and the TLC272. Both provide acceptable performance, with the TLC272 having the upper hand. However, neither amplifier features a rail-to-rail input stage. For the current tests, I decided to power the TLC272 with 0 to 5V and avoid providing large voltages. Later on, I'll either uses two Schotky diodes to clamp the voltage at 0 and 3.3V or find a better opamp. 
-<p align="center"> <img src="DAC/Sketch_condi.jpg" width="500"><br> <em>Figure 3: </em> </p>
+<p align="center"> <img src="DAC/Sketch_condi.jpg" width="500"><br> <em>Figure 3: Sketch (v1) of the analog input conditionning. </em> </p>
 
-
+Some results using burst sine waves as the input are given in Figure 4. The results are decent and the delay is low (7-8us), and can perhaps be improved even furter. Note that for these results, the DC shift was removed to ease the comparison.  
 
 <p align="center">
   <img src="DAC/Res_exp.png" width="500"><br>
