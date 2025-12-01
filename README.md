@@ -7,8 +7,14 @@ To ensure sufficient performances and minimal delay, we will use the Teensy 4.1 
 * Simultenous reading (internal ADC) and writing (MCP4822)
 * Conditionning of the analog input (1.65 DC offset and clamping)
 
-# Input-Output Response
+# External DAC
+<p align="center">
+  <img src="DAC/Teensy_DAC_schematic.png" width="500"><br>
+  <em> Sketch of the circuit using the MCP4822. Each output of the DAC is connected to a female BNC connector. One output corresponds to the raw signal while the second is filtered (High pass RC filter).  </em>
+</p>
 
+
+# Input-Output
 First step, we will couple the Teensy with a MCP4822 (DAC) to convert the digital output to an analog signal.
 <p align="center">
   <img src="DAC/Delay.jpg" width="500"><br>
@@ -19,7 +25,4 @@ The MCP4822 is controlled via the SPI interface and allows relatively decent per
 
 Note that the input analog signal is read via the native ADC.
 
-<p align="center">
-  <img src="DAC/Teensy_DAC_schematic.png" width="500"><br>
-  <em> Sketch of the circuit using the MCP4822. Each output of the DAC is connected to a female BNC connector. One output corresponds to the raw signal while the second is filtered (High pass RC filter).  </em>
-</p>
+
