@@ -19,7 +19,7 @@ Using the MCP4822 with a Teensy is relatively easy using the SPI interface. In f
 
 <p align="center">
   <img src="DAC/PCB_V1.MP.jpg" width="500"><br>
-  <em> Fig1: Sketch of the circuit using the MCP4822. Each output of the DAC is connected to a female BNC connector. One output corresponds to the raw signal while the second is filtered (High pass RC filter).  </em>
+  <em> Fig1: Version 1 of the controller.  </em>
 </p>
 
 First step, we will couple the Teensy with a MCP4822 (DAC) to convert the digital output to an analog signal.
