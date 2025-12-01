@@ -4,7 +4,7 @@
 
 const byte CS = 10;
 const byte LDAC = 12;
-const byte analogIn = A5;
+const byte analogIn = A5; // Analog A5 pin
 const unsigned int MCP4822_A = 0B0001000000000000; // Output 1
 // const unsigned int MCP4822_A = 0B1001000000000000; // Output 2
 
@@ -39,13 +39,13 @@ void setup() {
   digitalWrite(LDAC, LOW);
 
   // ---- ADC configuration ----
-  adc->adc0->setAveraging(0);
-  adc->adc0->setResolution(12);
-  adc->adc0->setConversionSpeed(ADC_CONVERSION_SPEED::VERY_HIGH_SPEED);
-  adc->adc0->setSamplingSpeed(ADC_SAMPLING_SPEED::VERY_HIGH_SPEED);
+  adc->adc0->setAveraging(0); // I set it to 0
+  adc->adc0->setResolution(12); 
+  adc->adc0->setConversionSpeed(ADC_CONVERSION_SPEED::VERY_HIGH_SPEED); // Can be changed
+  adc->adc0->setSamplingSpeed(ADC_SAMPLING_SPEED::VERY_HIGH_SPEED); // Can be changed
 
   // ---- SPI configuration ----
-  SPI.beginTransaction(SPISettings(70000000, MSBFIRST, SPI_MODE0));
+  SPI.beginTransaction(SPISettings(70000000, MSBFIRST, SPI_MODE0)); // 70000000 works in my case, but to can be reduced (10000000 for example)
 
   // ---- Start periodic sampling ----
   // 500 kHz sampling = period 2 µs
