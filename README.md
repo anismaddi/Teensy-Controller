@@ -29,7 +29,6 @@ Since the analog pin can safely accept only voltages between 0 and 3.3 V, a DC o
 
 
 
-First step, we will couple the Teensy with a MCP4822 (DAC) to convert the digital output to an analog signal.
 <p align="center">
   <img src="DAC/Res_exp.png" width="500"><br>
   <em>Figure 3: Input (Frequency generator) vs Output (MCP4822 Output) for different frequencies. The excitation corresponds to a burst sine with one cycle. </em>
