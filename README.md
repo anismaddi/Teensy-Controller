@@ -16,6 +16,12 @@ To ensure sufficient performances and minimal delay, we will use the Teensy 4.1 
 Using the MCP4822 with a Teensy is relatively easy using the SPI interface. In fact, there is several online tutorials covering this topic (using arduino/ESP32..). The circuit used in this work is given in Figure 1. Both outputs are used, one  corresponds to the raw DAC output signal while the second is filtered using a simple low pass RC filter.
 
 # Input-Output
+
+<p align="center">
+  <img src="DAC/PCB_V1.MP.jpg" width="500"><br>
+  <em> Fig1: Sketch of the circuit using the MCP4822. Each output of the DAC is connected to a female BNC connector. One output corresponds to the raw signal while the second is filtered (High pass RC filter).  </em>
+</p>
+
 First step, we will couple the Teensy with a MCP4822 (DAC) to convert the digital output to an analog signal.
 <p align="center">
   <img src="DAC/Delay.jpg" width="500"><br>
