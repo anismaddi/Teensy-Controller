@@ -1,10 +1,10 @@
 # Teensy-Controller
-This project aims at building a cost effective toolbox for active acoustic control, whether it is to solve physical problems (noise control, active metamaterials..) or for audio applications. For this targeting applications, it is expected that the system obtains some physical analog inputs and output a filetered analog output.  
+This project aims at building a cost effective toolbox for active acoustic control, whether it is to solve physical problems (noise control, active metamaterials..) or for audio applications. For this targeted applications, it is expected that the system obtains some physical analog inputs and output an analog treated version of the input.  
 
 
-To ensure sufficient performances and minimal delay, we will use the Teensy 4.1 microcontroller and build all the necessary circuitery (conditionning, analog conversion...) and codes. This work is split as follow:
-* DAC using the MCP 4822 is done. More details in the corresponding file.
-* External ADC, in progress.
+To ensure sufficient performances and minimal delay, we will use the Teensy 4.1 microcontroller and build all the necessary circuitery (level shift, analog conversion...) and codes. This work is split as follow:
+* Analog output using the MCP4822 via the SPI interface.
+* Simultenous reading (internal ADC) and writing (MCP4822)
 
 # Input-Output Response
 
