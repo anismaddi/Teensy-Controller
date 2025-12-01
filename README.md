@@ -28,7 +28,7 @@ Additionally, I will use the analog input of the Teensy (pin A5 in most cases) a
 First step, we will couple the Teensy with a MCP4822 (DAC) to convert the digital output to an analog signal.
 <p align="center">
   <img src="DAC/Res_exp.png" width="500"><br>
-  <em>Figure 2: Input (Frequency generator) vs Output (MCP4822 Output) for different frequencies. </em>
+  <em>Figure 3: Input (Frequency generator) vs Output (MCP4822 Output) for different frequencies. The excitation corresponds to a burst sine. </em>
 </p>
 
 The MCP4822 is controlled via the SPI interface and allows relatively decent performances, atleast in the audio range. For instance, the total delay measured between the the frequency generator and the output of the MCP is estimated to 2us (See Fig.1 for some measured signals).
