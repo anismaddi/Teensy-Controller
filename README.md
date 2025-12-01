@@ -31,6 +31,6 @@ Since the analog pin can safely accept only voltages between 0 and 3.3 V, a DC o
 
 <p align="center">
   <img src="DAC/Res_exp.png" width="500"><br>
-  <em>Figure 3: Input (Frequency generator) vs Output (MCP4822 Output) for different frequencies. The excitation corresponds to a burst sine with one cycle. </em>
+  <em>Figure 3: Input (Frequency generator) vs Output (MCP4822 Output) for different frequencies. The excitation corresponds to a burst sine with one cycle. Total delay between the two signal is around 7-8us </em>
 </p>
 
