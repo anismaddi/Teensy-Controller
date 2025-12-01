@@ -17,6 +17,6 @@ The MCP4822 is controlled via the SPI interface and allows relatively decent per
 Note that the input analog signal is read via the native ADC.
 
 <p align="center">
-  <img src="Teensy_DAC_schematic.png" width="500"><br>
+  <img src="DAC/Teensy_DAC_schematic.png" width="500"><br>
   <em> Sketch of the circuit using the MCP4822. Each output of the DAC is connected to a female BNC connector. One output corresponds to the raw signal while the second is filtered (High pass RC filter).  </em>
 </p>
