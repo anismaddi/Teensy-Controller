@@ -1,4 +1,4 @@
-# Teensy-Controller
+# Teensy Controller 
 This project aims at building a cost effective toolbox for active acoustic control, whether it is to solve physical problems (noise control, active metamaterials..) or for audio applications. For this targeted applications, it is expected that the system obtains some physical analog inputs and output an analog treated version of the input.  
 
 
