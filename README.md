@@ -15,7 +15,7 @@ To ensure sufficient performances and minimal delay, we will use the Teensy 4.1 
 
 Using the MCP4822 with a Teensy is relatively easy using the SPI interface. In fact, there is several online tutorials covering this topic (using arduino/ESP32..). The circuit used in this work is given in Figure 1. Both outputs are used, one  corresponds to the raw DAC output signal while the second is filtered using a simple low pass RC filter.
 
-# Input-Output
+# Single Input- Single Output (SISO)
 
 <p align="center">
   <img src="DAC/PCB_V1.MP.jpg" width="500"><br>
@@ -36,3 +36,4 @@ Some results using burst sine waves as the input are given in Figure 4. The resu
   <em>Figure 4: Input (Frequency generator) vs Output (MCP4822 Output) signals for different frequencies. The excitation corresponds to a burst sine with one cycle. Total delay between the two signal is around 7-8us </em>
 </p>
 
+# Multiple Inputs - Multiple Outputs (MIMO)
